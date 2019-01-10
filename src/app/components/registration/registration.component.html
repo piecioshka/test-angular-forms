@@ -14,31 +14,99 @@
     </p>
 </div>
 
+<!-- <pre>{{ registrationForm.value | json }}</pre> -->
+
 <div class="row">
-    <form class="col-12">
+    <form
+        class="col-12"
+        [formGroup]="registrationForm"
+        (ngSubmit)="onSubmit()"
+    >
         <div class="form-group">
-            <label>E-mail</label>
+            <label>
+                E-mail
+                <sup class="text-danger">*</sup>
+            </label>
             <input
-                autofocus
                 type="text"
                 class="form-control"
+                formControlName="email"
+                [class.is-invalid]="validateField('email')"
             >
+            <app-field-errors
+                *ngIf="validateField('email')"
+                [formGroup]="registrationForm"
+                fieldName="email"
+            ></app-field-errors>
         </div>
 
         <div class="form-group">
-            <label>Password</label>
+            <label>
+                Password
+                <sup class="text-danger">*</sup>
+            </label>
             <input
                 type="password"
                 class="form-control"
+                formControlName="password"
+                [class.is-invalid]="validateField('password')"
             >
+            <app-field-errors
+                *ngIf="validateField('password')"
+                [formGroup]="registrationForm"
+                fieldName="password"
+            ></app-field-errors>
         </div>
 
         <div class="form-group">
-            <label>Confirm password</label>
+            <label>
+                Confirm password
+                <sup class="text-danger">*</sup>
+            </label>
             <input
                 type="password"
                 class="form-control"
+                formControlName="confirmPassword"
+                [class.is-invalid]="validateField('confirmPassword')"
             >
+            <app-field-errors
+                *ngIf="registrationForm.errors"
+                [formGroup]="registrationForm"
+                fieldName="confirmPassword"
+            ></app-field-errors>
+        </div>
+
+        <div formGroupName="person">
+
+            <div class="form-group">
+                <label>Name</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    formControlName="name"
+                    [class.is-invalid]="validateField('person.name')"
+                >
+                <app-field-errors
+                    *ngIf="validateField('person.name')"
+                    [formGroup]="registrationForm"
+                    fieldName="person.name"
+                ></app-field-errors>
+            </div>
+
+            <div class="form-group">
+                <label>Surname</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    formControlName="surname"
+                    [class.is-invalid]="validateField('person.surname')"
+                >
+                <app-field-errors
+                    *ngIf="validateField('person.surname')"
+                    [formGroup]="registrationForm"
+                    fieldName="person.surname"
+                ></app-field-errors>
+            </div>
         </div>
 
         <button
