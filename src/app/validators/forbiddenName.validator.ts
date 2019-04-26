@@ -1,4 +1,5 @@
 import { ValidatorFn, AbstractControl } from '@angular/forms';
+
 import { ValidateResponse } from '../components/interfaces/validate-response.interface';
 
 export function ForbiddenNameValidator(...patterns: Array<RegExp>): ValidatorFn {
