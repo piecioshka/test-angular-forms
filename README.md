@@ -8,5 +8,5 @@
 
 ## Features
 
-* :white_check_mark: `Template Driven Forms` — registration form
-* :white_check_mark: `Reactive Forms` — login form
+* :white_check_mark: `Template Driven Forms` — login form
+* :white_check_mark: `Reactive Forms` — registration form

@@ -12,10 +12,16 @@ export class FieldErrorsComponent {
   @Input() fieldName: string = null;
 
   get errors() {
-    return this.formGroup.get(this.fieldName).errors;
+    if (this.formGroup) {
+      return this.formGroup.get(this.fieldName).errors;
+    }
+    return null;
   }
 
   get formErrors() {
-    return this.formGroup.errors;
+    if (this.formGroup) {
+      return this.formGroup.errors;
+    }
+    return null;
   }
 }

@@ -1,5 +1,5 @@
 import { AbstractControl } from "@angular/forms";
-import { ValidateResponse } from "../components/interfaces/validate-response.interface";
+import { ValidateResponse } from "../interfaces/validate-response.interface";
 
 export function PasswordValidator(control: AbstractControl): ValidateResponse {
   const password = control.get("password");
