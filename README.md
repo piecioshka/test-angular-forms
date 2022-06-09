@@ -4,11 +4,9 @@
 
 ## Demo 🎉
 
-* <https://piecioshka.github.io/test-angular-forms/>
+<https://piecioshka.github.io/test-angular-forms/>
 
 ## Features
 
-* :white_check_mark: Generate app with Angular CLI
-* :white_check_mark: Create registration page with form: `Template Driven Forms`
-* :white_check_mark: Create login page with form: `Reactive Forms`
-* :white_check_mark: Create links to switch between them
+* :white_check_mark: `Template Driven Forms` — registration form
+* :white_check_mark: `Reactive Forms` — login form

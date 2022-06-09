@@ -1,9 +1,9 @@
 <div class="text-danger">
-    <!-- <pre>{{ errors | json }}</pre> -->
-    <!-- <pre>{{ formErrors | json }}</pre> -->
-    <small *ngIf="errors?.required">Field is required</small>
-    <small *ngIf="errors?.minlength">Field size is to small</small>
-    <small *ngIf="errors?.maxlength">Field size is to big</small>
-    <small *ngIf="errors?.forbiddenName">"{{ errors?.forbiddenName.value }}" name not allowed</small>
-    <small *ngIf="formErrors?.misMatch">Passwords are not the same</small>
+  <!-- <pre>{{ errors | json }}</pre> -->
+  <!-- <pre>{{ formErrors | json }}</pre> -->
+  <small *ngIf="errors?.required">Field is required</small>
+  <small *ngIf="errors?.minlength">Field size is to small</small>
+  <small *ngIf="errors?.maxlength">Field size is to big</small>
+  <small *ngIf="errors?.forbiddenName">"{{ errors?.forbiddenName.value }}" name not allowed</small>
+  <small *ngIf="formErrors?.misMatch">Passwords are not the same</small>
 </div>

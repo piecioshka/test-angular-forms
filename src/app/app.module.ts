@@ -1,14 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { RouterModule } from "@angular/router";
 
-import { AppRoutingModule } from './app-routing.module';
-import { RegistrationComponent } from './components/registration/registration.component';
-import { AppComponent } from './components/app/app.component';
-import { LoginComponent } from './components/login/login.component';
-import { FieldErrorsComponent } from './components/field-errors/field-errors.component';
+import { AppRoutingModule } from "./app-routing.module";
+import { RegistrationComponent } from "./components/registration/registration.component";
+import { AppComponent } from "./components/app/app.component";
+import { LoginComponent } from "./components/login/login.component";
+import { FieldErrorsComponent } from "./components/field-errors/field-errors.component";
 
 @NgModule({
   imports: [
@@ -17,14 +17,14 @@ import { FieldErrorsComponent } from './components/field-errors/field-errors.com
     AppRoutingModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   declarations: [
     AppComponent,
     RegistrationComponent,
     LoginComponent,
-    FieldErrorsComponent
+    FieldErrorsComponent,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,90 +1,80 @@
 <div class="row">
-    <h2 class="col-12">Login page</h2>
+  <h2 class="col-12">Login page</h2>
 </div>
 
 <div class="row">
-    <p class="col-12">
-        You don't have account?
-        <a
-            class="text-danger"
-            routerLink="/register"
-        >
-            Register
-        </a>
-    </p>
+  <p class="col-12">
+    You don't have account?
+    <a class="text-danger" routerLink="/register"> Register </a>
+  </p>
 </div>
 
 <div class="row">
-    <div class="col-6">
-        <p
-            *ngIf="formSubmitted"
-            class="alert alert-success"
+  <div class="col-6">
+    <p *ngIf="formSubmitted" class="alert alert-success">Thanks for logging!</p>
+  </div>
+</div>
+
+<div class="row">
+  <form
+    #loginForm="ngForm"
+    class="col-12"
+    (ngSubmit)="onSubmit()"
+    *ngIf="!formSubmitted"
+  >
+    <div class="form-group">
+      <label>E-mail <sup class="text-danger">*</sup></label>
+      <input
+        required
+        autofocus
+        #email="ngModel"
+        [(ngModel)]="userModel.email"
+        class="form-control"
+        [class.is-invalid]="email.invalid && email.touched"
+        type="text"
+        name="email"
+        maxlength="5"
+        minlength="4"
+      />
+      <small *ngIf="email.touched" class="text-danger form-text">
+        <span *ngIf="email.errors?.required">E-mail field is required</span>
+        <span *ngIf="email.errors?.maxlength">E-mail field size is to big</span>
+        <span *ngIf="email.errors?.minlength"
+          >E-mail field size is to small</span
         >
-            Thanks for logging!
-        </p>
+      </small>
     </div>
-</div>
 
-<div class="row">
-    <form
-        #loginForm="ngForm"
-        class="col-12"
-        (ngSubmit)="onSubmit()"
-        *ngIf="!formSubmitted"
-    >
-        <div class="form-group">
-            <label>E-mail <sup class="text-danger">*</sup></label>
-            <input
-                required
-                autofocus
-                #email="ngModel"
-                [(ngModel)]="userModel.email"
-                class="form-control"
-                [class.is-invalid]="email.invalid && email.touched"
-                type="text"
-                name="email"
-                maxlength="5"
-                minlength="4"
-            >
-            <small
-                *ngIf="email.touched"
-                class="text-danger form-text"
-            >
-                <span *ngIf="email.errors?.required">E-mail field is required</span>
-                <span *ngIf="email.errors?.maxlength">E-mail field size is to big</span>
-                <span *ngIf="email.errors?.minlength">E-mail field size is to small</span>
-            </small>
-        </div>
+    <div class="form-group">
+      <label>Password <sup class="text-danger">*</sup></label>
+      <input
+        required
+        #password="ngModel"
+        [(ngModel)]="userModel.password"
+        class="form-control"
+        [class.is-invalid]="password.invalid && password.touched"
+        type="password"
+        name="password"
+        minlength="4"
+      />
+      <small *ngIf="password.touched" class="text-danger form-text">
+        <span *ngIf="password.errors?.required"
+          >Password field is required</span
+        >
+        <span *ngIf="password.errors?.minlength"
+          >Password field size is to small</span
+        >
+      </small>
+    </div>
 
-        <div class="form-group">
-            <label>Password <sup class="text-danger">*</sup></label>
-            <input
-                required
-                #password="ngModel"
-                [(ngModel)]="userModel.password"
-                class="form-control"
-                [class.is-invalid]="password.invalid && password.touched"
-                type="password"
-                name="password"
-                minlength="4"
-            >
-            <small
-                *ngIf="password.touched"
-                class="text-danger form-text"
-            >
-                <span *ngIf="password.errors?.required">Password field is required</span>
-                <span *ngIf="password.errors?.minlength">Password field size is to small</span>
-            </small>
-        </div>
-
-        <div class="form-group">
-            <button
-                class="btn btn-primary"
-                [disabled]="loginForm.invalid"
-                type="submit"
-            >
-                Login
-            </button>
-        </div>
-    </form>
+    <div class="form-group">
+      <button
+        class="btn btn-primary"
+        [disabled]="loginForm.invalid"
+        type="submit"
+      >
+        Login
+      </button>
+    </div>
+  </form>
 </div>

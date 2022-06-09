@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "test-angular-forms",
   "version": "0.0.0",
   "scripts": {
@@ -8,10 +9,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "predeploy": "ng build --prod --base-href=/test-angular-forms/",
+    "predeploy": "ng build --base-href=/test-angular-forms/",
     "deploy": "cross-env NODE_DEBUG=gh-pages gh-pages -d dist/test-angular-forms"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~7.1.0",
     "@angular/common": "~7.1.0",
