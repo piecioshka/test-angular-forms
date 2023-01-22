@@ -2,7 +2,7 @@
 
 :ledger: Test app with Angular Forms.
 
-## Demo 🎉
+## Preview 🎉
 
 <https://piecioshka.github.io/test-angular-forms/>
 
