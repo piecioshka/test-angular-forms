@@ -10,3 +10,7 @@
 
 * :white_check_mark: `Template Driven Forms` — login form
 * :white_check_mark: `Reactive Forms` — registration form
+
+## License
+
+[The MIT License](http://piecioshka.mit-license.org) @ 2026
